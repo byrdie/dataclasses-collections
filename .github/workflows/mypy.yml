@@ -1,0 +1,23 @@
+name: Mypy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Mypy
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python
+      uses: actions/setup-python@v2
+    - name: Install Dependencies
+      run: |
+        pip install .[test]
+        pip install mypy
+    - name: Run mypy
+      run: |
+        mypy dataclasses_extensions/
