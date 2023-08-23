@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dataclasses-collections"
+authors = [
+    {name = "Roy T. Smart", email = "roytsmart@gmail.com"},
+]
+description = "Limited implementation of the Python collections module using dataclasses"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+]
+doc = [
+    "pytest",
+    "matplotlib",
+    "graphviz",
+    "sphinx-autodoc-typehints",
+    "pydata-sphinx-theme",
+    "ipykernel",
+    "jupyter-sphinx",
+    "sphinx-favicon",
+]
+
+[project.urls]
+Homepage = "https://github.com/byrdie/dataclasses-collections"
+Documentation = "https://dataclasses-collections.readthedocs.io/en/latest"
+
+[tool.setuptools_scm]
